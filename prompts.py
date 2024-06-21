@@ -10,6 +10,6 @@ class Prompts:
 
     @staticmethod
     def personalized_message_prompt(individual, course_name):
-        return f"Create a personalized formal letter for {individual['name']} to invite them to the {course_name} based on their profile: {individual}"
+        return f"Craft a personalized message to {individual['name']} to invite them to the {course_name} course based on their profile: {individual}"
 
 prompts = Prompts()
