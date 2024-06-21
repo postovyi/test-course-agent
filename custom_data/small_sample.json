@@ -1,0 +1,112 @@
+[
+  {
+    "id": "1",
+    "name": "Linda Thompson",
+    "job_title": "Sales Manager",
+    "about": "Sales manager with a track record of achieving and exceeding sales targets.",
+    "posts": [
+      "Creating sales strategies for AI products.",
+      "Attending seminars on AI in sales."
+    ],
+    "summary": "6+ years of experience in sales management, with a track record of successful AI product sales."
+  },
+  {
+    "id": "2",
+    "name": "Linda Thompson",
+    "job_title": "Sales Manager",
+    "about": "Sales manager with a track record of achieving and exceeding sales targets.",
+    "posts": [
+      "Creating sales strategies for AI products.",
+      "Attending seminars on AI in sales."
+    ],
+    "summary": "6+ years of experience in sales management, with a track record of successful AI product sales."
+  },
+  {
+    "id": "3",
+    "name": "James Anderson",
+    "job_title": "UX Designer",
+    "about": "UX designer with a keen eye for user-centric design and usability.",
+    "posts": [
+      "Designing user interfaces for better usability.",
+      "Interested in the latest trends in UX design."
+    ],
+    "summary": "5+ years of experience in UX design, with a focus on improving user experiences."
+  },
+  {
+    "id": "4",
+    "name": "John Doe",
+    "job_title": "Software Engineer",
+    "about": "Experienced software engineer with a passion for developing innovative programs.",
+    "posts": [
+      "Working on a new AI project using Python.",
+      "Interested in attending a machine learning course."
+    ],
+    "summary": "5+ years of experience in software development, specializing in AI and machine learning."
+  },
+  {
+    "id": "5",
+    "name": "Laura Martinez",
+    "job_title": "Data Engineer",
+    "about": "Data engineer with skills in data pipeline development and big data technologies.",
+    "posts": [
+      "Building scalable data pipelines.",
+      "Exploring new big data technologies."
+    ],
+    "summary": "4+ years of experience in data engineering, focusing on building and maintaining data infrastructure."
+  },
+  {
+    "id": "6",
+    "name": "Robert Garcia",
+    "job_title": "Operations Manager",
+    "about": "Operations manager with experience in optimizing processes and improving efficiency.",
+    "posts": [
+      "Optimizing operational processes.",
+      "Implementing new AI tools for process improvement."
+    ],
+    "summary": "7+ years of experience in operations management, specializing in process optimization and efficiency."
+  },
+  {
+    "id": "7",
+    "name": "Sarah Davis",
+    "job_title": "Business Analyst",
+    "about": "Business analyst with expertise in data-driven decision making and process improvement.",
+    "posts": [
+      "Analyzing business processes for a new AI initiative.",
+      "Interested in AI courses to enhance my skills."
+    ],
+    "summary": "5+ years of experience in business analysis, specializing in data analysis and process optimization."
+  },
+  {
+    "id": "8",
+    "name": "David Wilson",
+    "job_title": "AI Specialist",
+    "about": "AI specialist focused on developing and deploying machine learning models.",
+    "posts": [
+      "Deploying a new machine learning model for customer segmentation.",
+      "Looking for innovative AI tools to improve performance."
+    ],
+    "summary": "3+ years of experience in AI development, with a focus on practical applications of machine learning."
+  },
+  {
+    "id": "9",
+    "name": "Sarah Davis",
+    "job_title": "Business Analyst",
+    "about": "Business analyst with expertise in data-driven decision making and process improvement.",
+    "posts": [
+      "Analyzing business processes for a new AI initiative.",
+      "Interested in AI courses to enhance my skills."
+    ],
+    "summary": "5+ years of experience in business analysis, specializing in data analysis and process optimization."
+  },
+  {
+    "id": "10",
+    "name": "James Anderson",
+    "job_title": "UX Designer",
+    "about": "UX designer with a keen eye for user-centric design and usability.",
+    "posts": [
+      "Designing user interfaces for better usability.",
+      "Interested in the latest trends in UX design."
+    ],
+    "summary": "5+ years of experience in UX design, with a focus on improving user experiences."
+  }
+]
