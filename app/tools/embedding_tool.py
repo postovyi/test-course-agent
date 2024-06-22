@@ -1,5 +1,6 @@
+from typing import List
+
 from langchain.tools import BaseTool
-from app.core.config import settings
 import fitz
 import json
 from sentence_transformers import SentenceTransformer
@@ -9,14 +10,16 @@ from scipy.spatial.distance import cosine
 class EmbeddingTool(BaseTool):
     name = "embedding_tool"
     description = ("Use this tool to create embeddings for the texts and candidates descriptions."
-                   "You will need them to find similarities between candidates and the text. Do not give any action input."
-                   "Do not use the whole text for the context.")
+                   "You will need them to find similarities between candidates and the text. Do not give any action "
+                   "input. Do not use the whole text for the context."
+                   "Mandatory field for this tool are 'pdf_path' and 'candidates_path')"
+                   "Do not pass 'args'.")
 
     def __init__(self):
         super().__init__()
 
     @staticmethod
-    def extract_text_from_pdf(pdf_path):
+    def extract_text_from_pdf(pdf_path: str) -> str:
         document = fitz.open(pdf_path)
         text = ""
         for page_num in range(len(document)):
@@ -25,7 +28,7 @@ class EmbeddingTool(BaseTool):
         return text
 
     @staticmethod
-    def extract_candidates_data(candidates_path):
+    def extract_candidates_data(candidates_path: str) -> dict[str, str]:
         with open(candidates_path, 'r') as file:
             candidates = json.load(file)
         candidates_dict = {}
@@ -42,9 +45,7 @@ class EmbeddingTool(BaseTool):
     def get_relevance_score(embedding1, embedding2):
         return 1 - cosine(embedding1, embedding2)
 
-    async def _arun(self, text):
-        pdf_path = "data/course_Description.pdf"
-        candidates_path = "data/candidates.json"
+    def _run(self, pdf_path: str, candidates_path: str) -> List[str]:
         model = SentenceTransformer('all-MiniLM-L6-v2')
         text = self.extract_text_from_pdf(pdf_path)
         candidates = self.extract_candidates_data(candidates_path)
@@ -56,6 +57,4 @@ class EmbeddingTool(BaseTool):
             candidates_embeddings[k] = self.get_relevance_score(text_embeddings, candidates_embeddings[k])
 
         candidates = dict(sorted(candidates_embeddings.items(), key=lambda item: item[1], reverse=True)[:10])
-        return candidates
-    def _run(self):
-        pass
+        return list(candidates.keys())
