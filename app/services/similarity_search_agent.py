@@ -5,7 +5,6 @@ from app.core.config import settings
 from app.tools.embedding_tool import EmbeddingTool
 from app.tools.reasoning_tool import ReasoningTool
 
-
 class SimilaritySearchAgent:
     def __init__(self):
         self.llm = ChatOpenAI(model="gpt-4o", openai_api_key=settings.OPENAI_API_KEY)
@@ -17,9 +16,8 @@ class SimilaritySearchAgent:
 
     def langchain_answer(self):
         agent = create_structured_chat_agent(self.llm, self.tools, self.prompt)
-        agent_executor = AgentExecutor(agent=agent, tools=self.tools, verbose=True)
+        agent_executor = AgentExecutor(agent=agent, tools=self.tools, verbose=True, handle_parsing_errors=True)
         return agent_executor.invoke({"input": f"What are the best fitting candidates? Give information about them "
-                                               f"and reason why they are the bes fitting."
+                                               f"and reason why they are the best fitting."
                                                f"Path to candidates: 'data/candidates.json', path to pdf: "
                                                f"'data/course_Description.pdf'"})
-

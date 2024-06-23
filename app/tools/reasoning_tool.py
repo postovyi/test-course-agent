@@ -2,7 +2,6 @@ from langchain.tools import BaseTool
 import json
 from typing import List, Dict
 
-
 class ReasoningTool(BaseTool):
     name = "reasoning_tool"
     description = ("Use this tool to reason why the selected candidates are the best fitting and return detailed "
@@ -19,7 +18,8 @@ class ReasoningTool(BaseTool):
         candidates_dict = {}
         for candidate in candidates:
             if candidate["id"] in data:
-                candidates_dict[candidate["id"]] = candidate["name"] + " " + candidate["summary"]
+                candidates_dict[candidate["id"]] = (candidate["name"] + " " + candidate["summary"] + " " +
+                                                    "Posts: " + " ".join(candidate["posts"]))
         return candidates_dict
 
     async def _arun(self, candidate_ids: List[str]) -> Dict[str, str]:
