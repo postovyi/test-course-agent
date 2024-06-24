@@ -21,10 +21,10 @@ class CourseAnalyzer:
         self.course_name = "Advanced AI and Machine Learning Course"
 
     def extract_text_from_pdf(self) -> str:
-        """Extracts raw text from PDF file
+        """Extracts raw text from PDF file.
 
         Returns:
-            str: text from PDF file as a string object
+            str: text from PDF file as a string object.
         """
         reader = PdfReader(self.pdf_path)
         text = ""
@@ -34,13 +34,13 @@ class CourseAnalyzer:
         return text
 
     def generate_course_summary(self, course_description: str) -> str:
-        """Generates course summary for a given course description
+        """Generates course summary for the given course description.
 
         Args:
-            course_description (str): course description to summarize
+            course_description (str): course description to summarize.
 
         Returns:
-            str: course description summary as a string object
+            str: course description summary as a string object.
         """
         prompt = prompts.course_summary_prompt(course_description)
         response = self.llm.invoke(prompt)
@@ -51,8 +51,8 @@ class CourseAnalyzer:
         """Analyzes user profiles information, decides whether the user fits for the course or not, and explains why.
 
         Args:
-            individual (dict): user information (name, job, social media posts, short CV)
-            summary (str): course description summary
+            individual (dict): user information (name, job, social media posts, short CV);
+            summary (str): course description summary.
 
         Returns:
             tuple[str, str]: first string is either "Yes" or "No" depending on whether the user fits for the course;
@@ -72,10 +72,10 @@ class CourseAnalyzer:
         """Generates a personalized message with course recommendation.
 
         Args:
-            individual (str): user to recommend the course for
+            individual (str): user to recommend the course for.
 
         Returns:
-            str: personalized message
+            str: personalized message.
         """
         prompt = prompts.personalized_message_prompt(individual, self.course_name)
         response = self.llm.invoke(prompt)
